@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>First Reading</title>
+</head>
+<body>
+    <!-- {% for type in types %}
+    {{type.id}} {{type.name}} {{type.price}} <br>
+    {% endfor %} -->
+    <div>
+        id : {{reading.id}} <br>
+        First Reading: {{reading.weight1}}<br>
+        Type: {{reading.vehicleType}}<br>
+        Rate: {{reading.rate}}<br>
+        Date & Time: {{reading.createdDate}}<br>
+        Vehicle Number: {{reading.vehicleNumber}}
+    </div>
+    <fieldset  >
+        <legend>First Reading</legend>
+        <form method="POST" target="_blank">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value='Record' onclick="window.location.href = '{% url 'main:Home' %}'">
+        </form>
+    </fieldset>
+</body>

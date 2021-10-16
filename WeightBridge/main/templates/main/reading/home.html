@@ -1,0 +1,9 @@
+{% extends "main/base.html" %}
+{% block title%} {%endblock%}
+{% block content%} 
+    <a class='btn' href="{% url 'main:firstReading' %}">First Reading</a>
+    <form method="GET" action="/secondReading">
+        <input type="number" name="pk" id="pk" required=True>
+        <input type='submit'>
+    </form>
+{%endblock%}

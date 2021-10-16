@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% block title%} First Reading {%endblock%}
+{% block content%} 
+    <fieldset  >
+        <legend>First Reading</legend>
+        <form method="POST" target="_blank">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value='Record' onclick="window.location.href = '{% url 'main:Home' %}'">
+        </form>
+    </fieldset>
+{% endblock %}

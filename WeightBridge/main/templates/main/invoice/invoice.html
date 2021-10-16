@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <h1>My Shop</h1>
+    <p>
+        Invoice no. {{ reading.id }}</br>
+        <span class="secondary">
+            {{ reading.createdDate|date:"M d, Y" }}
+        </span>
+    </p>
+    <h3>Items bought</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Weight Type</th>
+                <th>Weigh</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr class="row{% cycle " 1" "2" %}">
+                <td>First Reading</td>
+                <td class="num">${{ reading.weight1 }}</td>
+            </tr>
+
+            <tr class="row{% cycle " 1" "2" %}">
+                <td>Second Reading</td>
+                <td class="num">${{ reading.weight2 }}</td>
+            </tr>
+            
+            
+            <tr class="total">
+                <td colspan="3">Total</td>
+                <td class="num">${{ reading.netWeight }}</td>
+            </tr>
+        </tbody>
+    </table>
+    Cost: {{reading.rate}}
+</body>
+
+</html>

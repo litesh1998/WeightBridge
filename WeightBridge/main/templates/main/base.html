@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{%endblock%}</title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ambey Shakti Comouterised Dharam Kanda</h1>
+        </div>
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</div>
+</body>
